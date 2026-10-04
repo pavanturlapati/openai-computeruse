@@ -66,8 +66,10 @@ Leave `JIRA_EXECUTION_ISSUE_KEY` empty to create a new execution issue per run, 
 - Every new origin needs approval. In `allowlist` mode only `ALLOWED_ORIGINS` are approved and all
   others are denied; use `ORIGIN_APPROVAL_MODE=prompt` to be asked in the terminal. Origin approval does
   not guard individual actions, so only point this at sites where that is acceptable.
-- Sign-in prompts from the browser are cancelled. Test credentials are written in the test steps, so only
-  use public demo credentials this way. Real credentials should go through the `browser_authentication` flow.
+- The agent sometimes asks for a sign-in (`browser_authentication`) instead of typing credentials itself. The POC
+  answers it with the username and password quoted in the current step, but only when the sign-in origin is in
+  `ALLOWED_ORIGINS`; otherwise it cancels. The values are never logged. Credentials live in the Jira test text, so
+  only use public demo credentials this way.
 - Results are model-driven and can vary between runs. The steps' verdicts are the agent's judgement.
 - Sessions are deleted after a clean run. If a step times out or the stream drops, the session is kept and its
   ID is logged so you can inspect it.
