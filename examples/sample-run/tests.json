@@ -1,0 +1,44 @@
+{
+  "fetchedAt": "2026-10-04T03:22:53.904Z",
+  "jql": "project = KAN AND labels = ai-test ORDER BY key ASC",
+  "tests": [
+    {
+      "key": "KAN-6",
+      "summary": "[AI-TEST] Valid login shows the secure area",
+      "url": "https://example.atlassian.net/browse/KAN-6",
+      "steps": [
+        {
+          "number": 1,
+          "text": "Open https://the-internet.herokuapp.com/login in the browser."
+        },
+        {
+          "number": 2,
+          "text": "Type the username \"tomsmith\" in the Username field and the password \"SuperSecretPassword!\" in the Password field, then click the Login button."
+        },
+        {
+          "number": 3,
+          "text": "Verify the page shows the message \"You logged into a secure area!\"."
+        }
+      ]
+    },
+    {
+      "key": "KAN-7",
+      "summary": "[AI-TEST] Invalid password shows an error",
+      "url": "https://example.atlassian.net/browse/KAN-7",
+      "steps": [
+        {
+          "number": 1,
+          "text": "Open https://the-internet.herokuapp.com/login in the browser."
+        },
+        {
+          "number": 2,
+          "text": "Type the username \"tomsmith\" in the Username field and the password \"NotTheRightPassword1\" in the Password field, then click the Login button."
+        },
+        {
+          "number": 3,
+          "text": "Verify the page shows an error message containing \"Your password is invalid!\"."
+        }
+      ]
+    }
+  ]
+}

@@ -49,6 +49,12 @@ step passes. By default the first non-passing step stops the test and the rest a
 `output/<runId>/` contains `report.json`, `report.html` (self-contained, screenshots embedded) and
 `screenshots/<KEY>-step<N>.jpg`. `report.json` references the screenshot files instead of embedding them.
 
+## Example output
+
+`examples/sample-run/` holds a real run of the two sample tests (both passed): `tests.json` (as fetched from Jira),
+`report.json`, `report.html` and the screenshots. The Jira site name and OpenAI session IDs were removed. Open
+`report.html` in a browser to see the report.
+
 ## Writing results to Jira
 
 Standard Jira issues have no Pass/Fail field, so `publish` records the outcome as:

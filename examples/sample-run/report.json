@@ -1,0 +1,210 @@
+{
+  "runId": "2026-10-04T03-25-43-164Z",
+  "startedAt": "2026-10-04T03:25:43.164Z",
+  "finishedAt": "2026-10-04T03:29:44.255Z",
+  "durationMs": 241091,
+  "model": "gpt-6.1-sol",
+  "jql": "project = KAN AND labels = ai-test ORDER BY key ASC",
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "errored": 0
+  },
+  "tests": [
+    {
+      "key": "KAN-6",
+      "summary": "[AI-TEST] Valid login shows the secure area",
+      "url": "https://example.atlassian.net/browse/KAN-6",
+      "status": "pass",
+      "startedAt": "2026-10-04T03:25:43.170Z",
+      "durationMs": 148113,
+      "sessionId": "sess_redacted",
+      "steps": [
+        {
+          "number": 1,
+          "text": "Open https://the-internet.herokuapp.com/login in the browser.",
+          "status": "pass",
+          "observation": "Opened the requested login page; the Username and Password fields and Login button are visible.",
+          "startedAt": "2026-10-04T03:25:44.743Z",
+          "durationMs": 72316,
+          "turnId": "turn_redacted",
+          "actions": [
+            {
+              "title": "Connecting to the browser",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Checking the browser connection",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Opening the login page",
+              "status": "failed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Checking the login page",
+              "status": "failed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Checking the page response",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Capturing the login page",
+              "status": "completed",
+              "hasScreenshot": true
+            }
+          ],
+          "screenshot": "screenshots/KAN-6-step1.jpg"
+        },
+        {
+          "number": 2,
+          "text": "Type the username \"tomsmith\" in the Username field and the password \"SuperSecretPassword!\" in the Password field, then click the Login button.",
+          "status": "pass",
+          "observation": "Login submitted successfully; the Secure Area page shows 'You logged into a secure area!' and a Logout button.",
+          "startedAt": "2026-10-04T03:26:57.059Z",
+          "durationMs": 61705,
+          "turnId": "turn_redacted",
+          "actions": [
+            {
+              "title": "Preparing to log in",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Checking the login fields",
+              "status": "failed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Submitting the login form",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Checking the login result",
+              "status": "failed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Capturing the login result",
+              "status": "failed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Capturing the final page",
+              "status": "completed",
+              "hasScreenshot": true
+            }
+          ],
+          "screenshot": "screenshots/KAN-6-step2.jpg"
+        },
+        {
+          "number": 3,
+          "text": "Verify the page shows the message \"You logged into a secure area!\".",
+          "status": "pass",
+          "observation": "The page visibly shows the message \"You logged into a secure area!\".",
+          "startedAt": "2026-10-04T03:27:58.765Z",
+          "durationMs": 9900,
+          "turnId": "turn_redacted",
+          "actions": [
+            {
+              "title": "Verifying the success message",
+              "status": "completed",
+              "hasScreenshot": true
+            }
+          ],
+          "screenshot": "screenshots/KAN-6-step3.jpg"
+        }
+      ]
+    },
+    {
+      "key": "KAN-7",
+      "summary": "[AI-TEST] Invalid password shows an error",
+      "url": "https://example.atlassian.net/browse/KAN-7",
+      "status": "pass",
+      "startedAt": "2026-10-04T03:28:11.283Z",
+      "durationMs": 92955,
+      "sessionId": "sess_redacted",
+      "steps": [
+        {
+          "number": 1,
+          "text": "Open https://the-internet.herokuapp.com/login in the browser.",
+          "status": "pass",
+          "observation": "Opened the login page; empty Username and Password fields and the Login button are visible.",
+          "startedAt": "2026-10-04T03:28:12.511Z",
+          "durationMs": 53194,
+          "turnId": "turn_redacted",
+          "actions": [
+            {
+              "title": "Connecting to the browser",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Connecting to the login page",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Connecting to the login page",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Opening the login page",
+              "status": "completed",
+              "hasScreenshot": true
+            }
+          ],
+          "screenshot": "screenshots/KAN-7-step1.jpg"
+        },
+        {
+          "number": 2,
+          "text": "Type the username \"tomsmith\" in the Username field and the password \"NotTheRightPassword1\" in the Password field, then click the Login button.",
+          "status": "pass",
+          "observation": "Entered the specified username and password and clicked Login. The page displays “Your password is invalid!”.",
+          "startedAt": "2026-10-04T03:29:05.705Z",
+          "durationMs": 22684,
+          "turnId": "turn_redacted",
+          "actions": [
+            {
+              "title": "Checking the login form",
+              "status": "completed",
+              "hasScreenshot": false
+            },
+            {
+              "title": "Submitting the test login",
+              "status": "completed",
+              "hasScreenshot": true
+            }
+          ],
+          "screenshot": "screenshots/KAN-7-step2.jpg"
+        },
+        {
+          "number": 3,
+          "text": "Verify the page shows an error message containing \"Your password is invalid!\".",
+          "status": "pass",
+          "observation": "A red error banner visibly contains “Your password is invalid!”.",
+          "startedAt": "2026-10-04T03:29:28.390Z",
+          "durationMs": 13693,
+          "turnId": "turn_redacted",
+          "actions": [
+            {
+              "title": "Checking the password error",
+              "status": "completed",
+              "hasScreenshot": true
+            }
+          ],
+          "screenshot": "screenshots/KAN-7-step3.jpg"
+        }
+      ]
+    }
+  ]
+}
