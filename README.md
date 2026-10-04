@@ -7,6 +7,10 @@ browser (one step at a time, one screenshot per step), and the results are writt
 Jira JQL -> data/tests.json -> OpenAI hosted browser -> output/<run>/report.json + report.html -> Jira execution issue
 ```
 
+## Architecture
+
+![Architecture diagram: Jira test issues are fetched by a local Node.js runner, which sends one step at a time to an OpenAI hosted agent session (GPT-6.1 Sol with the computer use tool) driving an OpenAI-hosted browser. Verdicts and screenshots come back, and the runner writes reports and attaches them to a Jira execution issue.](docs/architecture.svg)
+
 ## Setup
 
 ```
